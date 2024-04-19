@@ -31,11 +31,14 @@
                                                 <div class="mb-3">
                                                     <form action="{{route('about.update', ['id'=>$item->id])}}" method="post">
                                                         @csrf
-<<<<<<< HEAD
+
+
                                                         @method('post')
-=======
+
                                                         @method('put')
->>>>>>> d8db09de121e0f76ec9b8810437584de0254efed
+
+                                                        @method('put')
+
                                                     <label for="exampleFormControlInput1" class="form-label">Name:</label>
                                                     <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="{{$item->name}}" value="{{$item->name}}">
                                                     </div>
