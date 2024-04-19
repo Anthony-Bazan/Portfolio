@@ -44,7 +44,7 @@
                                         <form action="{{route('awards.delete',['id'=>$item->id])}}" method="POST">
                                           @csrf
                                           @method('delete')
-                                        <button class="btn btn-danger me-2" type="submit"><i class="uil uil-trash-alt"></i></button>
+                                        <button class="btn btn-danger " type="submit"><i class="uil uil-trash-alt"></i></button>
                                       </form>
                                       </div>
                                     </td>

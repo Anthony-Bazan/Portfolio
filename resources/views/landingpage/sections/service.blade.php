@@ -7,8 +7,9 @@
                     <h3>What I provide</h3>
                 </div>
                 <ul class="service-list">
+                    @foreach ($service as $item )
                     <li class="service-container">
-                        @foreach ($service as $item )
+                       
         
                         <div class="service-card">
                             <i class="fas fa-pencil-ruler"></i>
@@ -26,8 +27,9 @@
                                 </p>
                             </div>
                         </div>
-                        @endforeach
+                       
                     </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

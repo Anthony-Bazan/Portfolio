@@ -15,7 +15,7 @@
         </div>
         @endforeach
         <div class="home-img">
-            <img src="{{ asset ('image/bazan.png')}}" alt="">
+            <img src="{{ asset ('image/bazan1.jpg')}}" style="width: 500px; height:550px; object-size:contain;object-fit:contain margin-top:100px;border-radius:25px" alt="">
         </div>
        </div>
        <a href="#about" class="scroll-down">Scroll Down <i class="fas fa-arrow-down"></i></a>

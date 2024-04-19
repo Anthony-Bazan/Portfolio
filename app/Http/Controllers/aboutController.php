@@ -63,4 +63,11 @@ class aboutController extends Controller
 
         return redirect(route('about.index'));
     }
+
+    public function destroy(Request $request,awardlist $id)
+    {
+
+        $id->delete();
+        return redirect(route('about.index'));
+    }
 }

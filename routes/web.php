@@ -15,6 +15,7 @@ use App\Http\Controllers\contactController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\forgetController;
+use App\Http\Controllers\socialController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,7 +43,7 @@ Route::get('/about', [aboutController::class, 'index'])->name('about.index');
 Route::put('/about/{id}/update', [aboutController::class, 'update'])->name('about.update');
 Route::put('/about/{id}/updates', [aboutController::class, 'updates'])->name('about.description');
 Route::post('/about/add', [aboutController::class, 'add'])->name('about.add');
-
+Route::delete('/about/delete/{id}', [aboutController::class, 'destroy'])->name('about.destroy');
 
 // education 
 Route::get('/education', [educationController::class, 'index'])->name('education.index');
@@ -75,6 +76,13 @@ Route::post('/services/add', [servicesController::class, 'add'])->name('services
 Route::put('/services/{id}/update', [servicesController::class, 'update'])->name('services.update');
 Route::delete('/service/{id}/delete', [servicesController::class, 'destroy'])->name('service.delete');
 
+// socials
+Route::get('/social', [socialController::class, 'index'])->name('social.index');
+Route::get('/social/site/{site}/{link}', [socialController::class, 'site'])->name('social.site');
+Route::post('/social/add', [socialController::class, 'add'])->name('social.add');
+Route::put('/social/{id}/update', [socialController::class, 'update'])->name('social.update');
+Route::delete('/social/{id}/delete', [socialController::class, 'Destroy'])->name('social.delete');
+
 // work
 Route::get('/work', [workController::class, 'index'])->name('work.index');
 Route::get('/site/{site}', [workController::class, 'site'])->name('site.index');
@@ -90,6 +98,7 @@ Route::delete('/client/delete/{id}', [clientController::class, 'destroy'])->name
 
 // contact
 Route::get('/contact', [contactController::class, 'index'])->name('contact.index');
+Route::post('/contact/{id}/update', [contactController::class, 'update'])->name('contact.update');
 
 // login
 Route::get('/login', [loginController::class, 'index'])->name('login.index');

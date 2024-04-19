@@ -12,7 +12,8 @@ use App\Models\awardlist;
 use App\Models\service;
 use App\Models\client;
 use App\Models\work;
-
+use App\Models\contact;
+use App\Models\social;
 use Illuminate\Http\Request;
 
 class homeController extends Controller
@@ -32,6 +33,8 @@ class homeController extends Controller
         $service = service::all();
         $work = work::all();
         $client = client::all();
+        $contact = contact::all();
+        $social = social::all();
 
         return view('landingpage/index',[
 
@@ -44,7 +47,9 @@ class homeController extends Controller
             'experience'   =>   $experience,
             'work'   =>   $work,
             'service'   =>   $service,
+            'social'   =>   $social,
             'client'   =>   $client,
+            'contact'   =>   $contact,
             'awardlist' => $awardlist
         ]);
     } 

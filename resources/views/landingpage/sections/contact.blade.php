@@ -6,18 +6,22 @@
                 <div class="contact-left">
                     <h2>Let's discuss your project</h2>
                     <ul class="contact-list">
+                        @foreach ($contact as $item )
+                            
+                       
                         <li>
                             <h3 class="itemlist"><i class="fas fa-phone"></i> Phone</h3>
-                            <span>+639366624960	</span>
+                            <span>{{$item->phone}}</span>
                         </li>
                         <li>
                             <h3 class="itemlist"><i class="fas fa-envelope"></i> Email</h3>
-                            <span><a href="zedcervantes4@gmail.com">anthonybazan1824@gmail.com</a></span>
+                            <span><a href="mailto:{{$item->email}}">{{$item->email}}</a></span>
                         </li>
                         <li>
-                            <h3 class="itemlist"><i class="fas fa-map-marker-alt"></i> Offical Address</h3>
-                            <span>Governor Ramos Road, Santa Maria, Zamboanga City</span>
+                            <h3 class="itemlist"><i class="fas fa-map-marker-alt"></i> Official Address</h3>
+                            <span>{{$item->location}}</span>
                         </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="contact-right">
@@ -33,7 +37,7 @@
                         <div class="third-row">
                             <textarea name="message" id="message" rows="7" placeholder="Message"></textarea>
                         </div>
-                        <button class="btn" type="button" onclick="sendMail()">Send Messgae <i class="fas fa-paper-plane"></i></button>
+                        <button class="btn" type="button" onclick="sendMail()">Send Message <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div> 

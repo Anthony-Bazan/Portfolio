@@ -1,10 +1,5 @@
 <footer>
         <div class="footer-container">
-            <div class="about group">
-                <h2>Paul</h2>
-                <p>Front End</p>
-                <a href="#about">About mE</a>
-            </div>
             <div class="hr"></div>
             <div class="info group">
                 <h3>More</h3>
@@ -19,9 +14,13 @@
             <div class="follow group">
                 <h3>Follow</h3>
             <ul>
-                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                @foreach ($social as $item )
+                    
+                
+                <li><a href="{{ route('social.site', ['site' => $item->site, 'link' => $item->link]) }}" target="{{ $item->site }}"><i class="{{$item->icon}}"></i></a></li>
+                @endforeach
+                {{-- <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li> --}}
             </ul>
             </div>
             

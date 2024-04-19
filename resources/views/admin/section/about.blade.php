@@ -128,7 +128,7 @@
                     </div>
                 </div>
                 @endforeach
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary mb-2">
                     Update
                 </button>
             </form>
@@ -161,11 +161,17 @@
                                     <td>{{$id->title}}</td>
                                     <td>{{$id->description}}</td>
                                     <td style="text-align: center">
+                                        <div class="d-flex justify-content-center align-items-center">
                                         <!-- Button to trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal" data-id="{{ $id->id }}" data-name="{{ $id->title }}"  data-description="{{ $id->description }}">
+                                        <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#updateModal" data-id="{{ $id->id }}" data-name="{{ $id->title }}"  data-description="{{ $id->description }}">
                                             <i class="uil uil-edit"></i>
                                         </button>
-                                        <button><i class="uil uil-trash-alt"></i></button>
+                                        <form action="{{route('about.destroy', ['id'=>$id->id])}}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                        <button type="submit" class="btn btn-danger me-2"><i class="uil uil-trash-alt"></i></button>
+                                        </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

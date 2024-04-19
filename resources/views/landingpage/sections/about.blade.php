@@ -23,7 +23,7 @@
                 </li>
                 @endforeach
             </ul>
-            <a href="" class="btn">Download CV <i class="fas fa-download"></i></a>
+            <a href="{{asset('cv/bazan.pdf')}}" download="" class="btn">Download CV <i class="fas fa-download"></i></a>
         </div>
         </div>
        </div>

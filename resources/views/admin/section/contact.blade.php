@@ -17,6 +17,12 @@
                 </div>
                 <div class="row">
                     {{-- name --}}
+                    @foreach ($contact as $item )
+                        
+                   
+                    <form action="{{route('contact.update', ['id'=>$item->id])}}" method="POST">
+                        @csrf
+                        @method('post')
                     <div class="col-12 col-md-6 d-flex">
                         <div class="card flex-fill border-0">
                             <div class="card-body py-4">
@@ -28,7 +34,7 @@
                                                 <div class="container-fluid-sm">
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlInput1" class="form-label">Phone:</label>
-                                                    <input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                    <input type="phone" name="phone" class="form-control" id="exampleFormControlInput1" value="{{$item->phone}}" placeholder="">
                                                     </div>
                                                 </div>
 
@@ -56,7 +62,7 @@
                                                 <div class="container-fluid-sm">
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlInput1" class="form-label">Email:</label>
-                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                    <input type="email" name="email" class="form-control" id="exampleFormControlInput1" value="{{$item->email}}" placeholder="">
                                                     </div>
                                                 </div>
 
@@ -84,7 +90,7 @@
                                                 <div class="container-fluid-sm">
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlInput1" class="form-label">Location:</label>
-                                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                    <input type="text" name="location" class="form-control" value="{{$item->location}}" id="exampleFormControlInput1" placeholder="">
                                                     </div>
                                                 </div>
 
@@ -100,48 +106,14 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Table Element -->
-                <div class="card border-0">
-                    <div class="card-header">
-                        <h5 class="card-title">
-                            Message Inbox
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-dark table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col" style="text-align: center">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td style="text-align: center">
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit"><i class="uil uil-edit"></i></button>
-                                        <button><i class="uil uil-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                               
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                @endforeach
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </form>
 
 
               
                
-            </div>
-            <a href="#" class="theme-toggle">
-            <i class="fa-regular fa-moon"></i>
-            <i class="fa-regular fa-sun"></i>
-        </a>
+           
         </main>
       
   

@@ -55,6 +55,9 @@
                             <li class="sidebar-item">
                                 <a href="{{route('client.index')}}" class="sidebar-link">Client</a>
                             </li>
+                            <li class="sidebar-item">
+                                <a href="{{route('social.index')}}" class="sidebar-link">Socials</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

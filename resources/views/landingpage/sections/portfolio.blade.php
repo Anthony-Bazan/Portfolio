@@ -12,7 +12,7 @@
                        <div class="overlay"></div>
                        <div class="info">
                         <h3>{{$item->name}}</h3>
-                        <span>{{$item->site}}</span>
+                        <a href="{{route('site.index', ['site'=>$item->site])}}" target="_blank">{{$item->site}}</a>
                        </div>
                        <img src="{{ asset ('upload/'.$item->image)}}" style="max-width:500px; object-fit:cover" alt="">
                      </div>
